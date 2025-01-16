@@ -47,7 +47,7 @@ final class URLRequestHelperImpl: URLRequestHelperProtocol {
         }
         
         // Get token
-        guard let token = UserDefaultsHelper.defaults.readToken() else {
+        guard let token = KeychainHelper.keychain.readToken() else {
             print("Error while retrieving the token in the creation of the heroes list request")
             return nil
         }

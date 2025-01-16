@@ -20,14 +20,15 @@
 		877F87582B5FC0170091C0A9 /* URLRequestHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F87572B5FC0170091C0A9 /* URLRequestHelperProtocol.swift */; };
 		877F875A2B5FC0220091C0A9 /* URLRequestHelperImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F87592B5FC0220091C0A9 /* URLRequestHelperImpl.swift */; };
 		877F875C2B5FD2DE0091C0A9 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F875B2B5FD2DE0091C0A9 /* Endpoints.swift */; };
-		87965FF12B7CD0AA005DC8D6 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87965FF02B7CD0AA005DC8D6 /* UserDefaultsHelper.swift */; };
 		87985FAA2B737FD9004F12D0 /* LoginErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87985FA92B737FD9004F12D0 /* LoginErrorView.swift */; };
 		87A0E66C2AE9251100AE8284 /* DesarrolloSeguroIOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A0E66B2AE9251100AE8284 /* DesarrolloSeguroIOSAppApp.swift */; };
 		87A0E66E2AE9251100AE8284 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A0E66D2AE9251100AE8284 /* ContentView.swift */; };
 		87A0E6702AE9251200AE8284 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A0E66F2AE9251200AE8284 /* Assets.xcassets */; };
 		87A0E6732AE9251200AE8284 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A0E6722AE9251200AE8284 /* Preview Assets.xcassets */; };
 		87AFBADA2B0FC0B7005273BD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AFBAD92B0FC0B7005273BD /* LoginView.swift */; };
+		F703ECE92D3951910010B53A /* KeyChainHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F703ECE82D39513C0010B53A /* KeyChainHelpers.swift */; };
 		F7449C112D350A0000DCC1A2 /* SSLPinningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7449C102D3509EC00DCC1A2 /* SSLPinningDelegate.swift */; };
+		F7D64A762D391CF8004B0186 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64A752D391CF4004B0186 /* Crypto.swift */; };
 		F7E9623E2D3133CE005ED5B2 /* SSLPinningSecureURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9623D2D3133BF005ED5B2 /* SSLPinningSecureURLSession.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +46,6 @@
 		877F87572B5FC0170091C0A9 /* URLRequestHelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestHelperProtocol.swift; sourceTree = "<group>"; };
 		877F87592B5FC0220091C0A9 /* URLRequestHelperImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestHelperImpl.swift; sourceTree = "<group>"; };
 		877F875B2B5FD2DE0091C0A9 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		87965FF02B7CD0AA005DC8D6 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		87985FA92B737FD9004F12D0 /* LoginErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginErrorView.swift; sourceTree = "<group>"; };
 		87A0E6682AE9251100AE8284 /* DesarrolloSeguroIOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesarrolloSeguroIOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A0E66B2AE9251100AE8284 /* DesarrolloSeguroIOSAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesarrolloSeguroIOSAppApp.swift; sourceTree = "<group>"; };
@@ -53,7 +53,9 @@
 		87A0E66F2AE9251200AE8284 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87A0E6722AE9251200AE8284 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		87AFBAD92B0FC0B7005273BD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F703ECE82D39513C0010B53A /* KeyChainHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainHelpers.swift; sourceTree = "<group>"; };
 		F7449C102D3509EC00DCC1A2 /* SSLPinningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLPinningDelegate.swift; sourceTree = "<group>"; };
+		F7D64A752D391CF4004B0186 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		F7E9623D2D3133BF005ED5B2 /* SSLPinningSecureURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLPinningSecureURLSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,7 +137,8 @@
 		87965FEF2B7CD0A0005DC8D6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				87965FF02B7CD0AA005DC8D6 /* UserDefaultsHelper.swift */,
+				F703ECE82D39513C0010B53A /* KeyChainHelpers.swift */,
+				F7D64A752D391CF4004B0186 /* Crypto.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -305,7 +308,6 @@
 			files = (
 				87172C5C2B85C2E400398629 /* HomeViewModel.swift in Sources */,
 				87172C4F2B7FD99500398629 /* Hero.swift in Sources */,
-				87965FF12B7CD0AA005DC8D6 /* UserDefaultsHelper.swift in Sources */,
 				F7449C112D350A0000DCC1A2 /* SSLPinningDelegate.swift in Sources */,
 				87A0E66E2AE9251100AE8284 /* ContentView.swift in Sources */,
 				877F87562B5FB1960091C0A9 /* RemoteDataSourceImpl.swift in Sources */,
@@ -316,8 +318,10 @@
 				877F87582B5FC0170091C0A9 /* URLRequestHelperProtocol.swift in Sources */,
 				87172C512B836C4500398629 /* HomeView.swift in Sources */,
 				877F875A2B5FC0220091C0A9 /* URLRequestHelperImpl.swift in Sources */,
+				F703ECE92D3951910010B53A /* KeyChainHelpers.swift in Sources */,
 				87A0E66C2AE9251100AE8284 /* DesarrolloSeguroIOSAppApp.swift in Sources */,
 				87985FAA2B737FD9004F12D0 /* LoginErrorView.swift in Sources */,
+				F7D64A762D391CF8004B0186 /* Crypto.swift in Sources */,
 				877F875C2B5FD2DE0091C0A9 /* Endpoints.swift in Sources */,
 				877F87542B5FB18D0091C0A9 /* RemoteDataSourceProtocol.swift in Sources */,
 				873E455E2B64624C003B1A02 /* RepositoryImpl.swift in Sources */,

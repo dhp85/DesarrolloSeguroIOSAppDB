@@ -87,7 +87,7 @@ final class RemoteDataSourceImpl: RemoteDataSourceProtocol {
                 print("Error: error while decoding the response from the server")
                 return nil
             }
-            print("Heroes successfully fetched from server: \(heroes)")
+            print("Heroes successfully fetched from server:")
             return heroes
         // If the status code is 400, return nil, print bad request error
         case 400:

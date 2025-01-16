@@ -30,8 +30,8 @@ struct RootView: View {
                     }
                 
                 Button("Logout") {
-                    UserDefaultsHelper.defaults.deleteUser()
-                    UserDefaultsHelper.defaults.deleteToken()
+                    KeychainHelper.keychain.deleteUser()
+                    KeychainHelper.keychain.deleteToken()
                     rootViewModel.status = .none
                 }
                     .tabItem {

@@ -11,17 +11,6 @@ import CommonCrypto
 
 class SSLPinningDelegate: NSObject {
     
-    private var localPublicKeyHashBase64: String = ""
-    
-    override init() {
-        let dataPK: [UInt8] = [0xC6-0x59,0x14+0x57,0x71-0x0C,0x6D-0x24,0x6D-0x2C,0x82-0x31,0x00+0x38,0x6F+0x06,0x20+0x0B,0xB6-0x53,0x11+0x50,0x8E-0x46,0x1A+0x3B,0x16+0x1F,0x7B-0x03,0xD3-0x66,0xDB-0x62,0x30+0x00,0x26+0x0D,0x1D+0x26,0x3B-0x09,0x53-0x11,0x48+0x1F,0x4F+0x1F,0xA4-0x4D,0x89-0x3A,0x3B+0x37,0xAD-0x49,0x66-0x23,0x8C-0x3A,0x01+0x32,0x58-0x13,0x04+0x72,0x1E+0x1B,0x59+0x08,0x26+0x26,0x74-0x0A,0x85-0x1B,0x16+0x2C,0x30+0x02,0x8E-0x46,0x5B+0x0F,0xC3-0x5C,0x14+0x29]
-        
-        guard let unwrappedPublicKeyHash = String(data: Data(dataPK), encoding: .utf8) else {
-            print("SSLPinning error: unable to obain local public key")
-            return
-        }
-        self.localPublicKeyHashBase64 = unwrappedPublicKeyHash
-    }
 }
 
 extension SSLPinningDelegate: URLSessionDelegate {
@@ -70,9 +59,11 @@ extension SSLPinningDelegate: URLSessionDelegate {
         
         let serverHashKeyBase64: String = sha256CryptoKit(data: serverPublicKeyData)
 
-        if serverHashKeyBase64 == self.localPublicKeyHashBase64 {
+        let localPublicKey = Crypto().getDecryptedPublicKey()
+        
+        if serverHashKeyBase64 == localPublicKey {
             print("Servidor \(serverHashKeyBase64)")
-            print("Local \(localPublicKeyHashBase64)")
+            print("Local \(localPublicKey)")
 
             // Continuar con la conexión -> porque sabemos que el servidor es quien dice ser
             completionHandler(.useCredential, URLCredential(trust: serverTrust))
@@ -80,7 +71,7 @@ extension SSLPinningDelegate: URLSessionDelegate {
         } else {
             // Cancelamos conexión -> porque hay alguien en medio
             print("Servidor \(serverHashKeyBase64)")
-            print("Local \(localPublicKeyHashBase64)")
+            print("Local \(localPublicKey)")
             print("SSLPinning error: server certificate doesn't match")
             completionHandler(.cancelAuthenticationChallenge, nil)
         }

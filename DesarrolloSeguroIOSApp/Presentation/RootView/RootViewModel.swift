@@ -34,7 +34,7 @@ final class RootViewModel: ObservableObject {
     func onLogin(user: String, password: String, completion: ((LoginError) -> Void)?) async {
         
         // Si el usuario está en user defaults, es que ya ha hecho login antes
-        if UserDefaultsHelper.defaults.readUser() != nil {
+        if KeychainHelper.keychain.readUser() != nil {
             completion?(.none)
             return
         }
@@ -50,8 +50,8 @@ final class RootViewModel: ObservableObject {
                     completion?(.unknownError)
                 case .loginSuccess:
                     print("Token: \(String(describing: token))")
-                    UserDefaultsHelper.defaults.save(user: user)
-                    UserDefaultsHelper.defaults.save(token: token!) // Force unwrap porque se ha comprobado que no es nil en el remote
+                    KeychainHelper.keychain.save(user: user)
+                    KeychainHelper.keychain.save(token: token!) // Force unwrap porque se ha comprobado que no es nil en el remote
                     completion?(.none)
                 }
             }
