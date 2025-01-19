@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import os
 
 final class RemoteDataSourceImpl: RemoteDataSourceProtocol {
     
@@ -41,6 +41,8 @@ final class RemoteDataSourceImpl: RemoteDataSourceProtocol {
                 return nil
             }
             print("Token: \(token)")
+            AppLogger.debug(token)
+            Logger.remoteDataSource.error("Login efectuado con el token \(token, privacy: .private)")
             return (token, .loginSuccess)
             
         // If the status code is 401, return (nil, authenticationError)

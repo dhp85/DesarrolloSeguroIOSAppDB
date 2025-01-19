@@ -16,7 +16,7 @@ enum PopUp {
 
 struct LoginView: View {
     
-    @State private var email = ""
+    @State private var email = "diegohp85@gmail.com"
     @State private var password = ""
     @State var popUp: PopUp = .none
     @EnvironmentObject var rootViewModel: RootViewModel
@@ -53,6 +53,12 @@ struct LoginView: View {
                         .shadow(radius: 10.0, x: 20, y: 10) // Projects shadow on the background image
                         .textInputAutocapitalization(.never) // First letter of the text is not capitalized by default
                         .autocorrectionDisabled()
+                        .onAppear {
+                            // TODO: Implementar password automatic fill
+                            rootViewModel.onPasswordFieldClick(withUser: email) { keychainPassword in
+                                self.password = keychainPassword
+                            }
+                        }
                 }
                 .frame(width: 272,height: 112)
 
@@ -61,7 +67,7 @@ struct LoginView: View {
                 Button {
                     print("Login")
                     Task {
-                        await rootViewModel.onLogin(user: "bejl@keepcoding.es", password: "123456") {
+                        await rootViewModel.onLogin(user: self.email, password: self.password) {
                             loginError in
                             DispatchQueue.main.async {
                                 switch loginError {
